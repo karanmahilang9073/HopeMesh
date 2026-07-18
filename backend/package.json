@@ -1,0 +1,21 @@
+{
+  "name": "HopeNesh",
+  "version": "1.0.0",
+  "description": "A MERN-based platform that connects donors with verified NGOs through smart resource matching, enabling transparent, efficient, and real-time donation management.",
+  "main": "src/App.js",
+  "scripts": {
+    "start": "node src/App.js",
+    "dev": "nodemon stc/App.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
