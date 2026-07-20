@@ -4,6 +4,7 @@ import helmet from 'helmet'
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import limiter from './middleware/rateLimiter.js';
+import router from './routes/index.js';
 
 
 export const app = express();
@@ -17,7 +18,13 @@ app.use(limiter)
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+app.use('/api/v1', router)
 
-app.get('/', (req,res) => {
-    res.send('HopeMesh')
+
+app.get('/health', (req,res) => {
+    res.json({success: true, message: 'HopeMesh: connect the donors to required places'})
+})
+
+app.get('/', (req, res) => {
+    res.send('HopeMesh backend working fine')
 })
