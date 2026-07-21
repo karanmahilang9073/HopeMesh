@@ -20,3 +20,10 @@ export const registerSchema = z.object({
         country: z.string().trim().min(2).max(56).optional(),
     }).strict().optional()
 }).strict()
+
+export const loginSchema = z.object({
+    email: z.string({required_error: 'email is required'})
+        .trim().toLowerCase().email('invalid email'),
+    password: z.string({required_error: 'password is required'})
+        .min(1, 'password is required')
+}).strict()
